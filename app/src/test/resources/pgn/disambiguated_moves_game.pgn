@@ -1,0 +1,8 @@
+[Event "Disambiguation Example"]
+[Site "Lichess"]
+[Date "2024.05.15"]
+[White "Player1"]
+[Black "Player2"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 b6 8. cxd5 exd5 9. Bd3 Bb7 10. O-O c5 11. dxc5 bxc5 12. Nbd2 Nc6 13. Bg3 Re8 14. Re1 Ne4 15. Bxe7 Qxe7 16. Rxe4 dxe4 17. Nd2 f5 18. f3 exf3 19. gxf3 Qf6 20. Qc2 Rad8 21. Rad1 Rxd2 22. Rxd2 Rd8 23. Rxd8+ Qxd8 24. Qxc5 Qd1+ 25. Kf2 Qd2 26. Qc8+ Kh7 27. Qc2+ Qxc2+ 28. Bxc2 Nd4 29. Bxd4 Bxd4 30. Ke3 Bc5 31. b4 Bb6 32. a4 a5 33. bxa5 Bxa5 34. Kd4 Kg6 35. Kc5 Kf6 36. Kb5 Ke5 37. Kxa5 Kd4 38. Kb5 Kc3 39. a5 Kb2 40. a6 Kxa2 41. a7 Kb2 42. a8=Q Kc3 43. Qe8 Kd4 44. Qe7 Kc5 45. Qe6 Kb5 46. Qe5+ Kc6 47. Qe6+ Kb7 48. Qe7+ Kb8 49. Qd8+ Ka7 50. Qc7+ Ka8 51. Qc6+ Ka7 52. Qc7+ Ka8 53. Qc6+ Ka7 54. Qc7+ Ka8 1/2-1/2

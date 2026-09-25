@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Chessin</string>
+    <string name="promo_queen">Promote to Queen</string>
+    <string name="promo_rook">Promote to Rook</string>
+    <string name="promo_bishop">Promote to Bishop</string>
+    <string name="promo_knight">Promote to Knight</string>
+    <string name="content_description_board">Chess board</string>
+    <string name="content_description_square_template">%1$s, %2$s</string>
+    <string name="content_description_empty_square_template">%1$s, empty</string>
+    <string name="content_description_piece_template">%1$s %2$s</string>
+</resources>

@@ -1,0 +1,8 @@
+[Event "Tournament"]
+[Site "Lichess"]
+[Date "2024.02.20"]
+[White "GM1"]
+[Black "GM2"]
+[Result "0-1"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 c5 5. cxd5 exd5 6. Nf3 Nc6 7. e3 Bf5 8. Qb3?! $2 {Dubious move} Na5 9. Qa4+ Nc6 10. Qb3 Na5 11. Qa4+ Nc6 12. Qb3 $10 {Equal position} Na5 13. Qa4+ Nc6 14. Qb3 1/2-1/2

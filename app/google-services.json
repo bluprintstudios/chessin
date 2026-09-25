@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "537414190052",
+    "project_id": "chessin-4dc44",
+    "storage_bucket": "chessin-4dc44.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537414190052:android:ecf7f3e71b8e07e6acbdf1",
+        "android_client_info": {
+          "package_name": "com.pro.chessin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBast1tRgEUqI4deHhiuWHkze8_CfwWJ5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

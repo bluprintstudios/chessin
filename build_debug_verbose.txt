@@ -1,0 +1,1094 @@
+﻿Initialized native services in: C:\Users\Drews\.gradle\native
+Initialized jansi services in: C:\Users\Drews\.gradle\native
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.5/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon JVM discovery is an incubating feature.
+Starting process 'command 'C:\Users\Drews\.jdks\jbr-17.0.14\bin\java.exe''. Working directory: C:\Users\Drews\.gradle\.tmp\tmp-jvm16593834319675072635probe Command: C:\Users\Drews\.jdks\jbr-17.0.14\bin\java.exe -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command 'C:\Users\Drews\.jdks\jbr-17.0.14\bin\java.exe''
+Received JVM installation metadata from 'C:\Users\Drews\.jdks\jbr-17.0.14': {JAVA_HOME=C:\Users\Drews\.jdks\jbr-17.0.14, JAVA_VERSION=17.0.14, JAVA_VENDOR=JetBrains s.r.o., RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.14+1-b1367.22, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.14+1-b1367.22, VM_VENDOR=JetBrains s.r.o., OS_ARCH=amd64}
+Received JVM installation metadata from 'C:\Program Files\Java\jdk-17': {JAVA_HOME=C:\Program Files\Java\jdk-17, JAVA_VERSION=17.0.12, JAVA_VENDOR=Oracle Corporation, RUNTIME_NAME=Java(TM) SE Runtime Environment, RUNTIME_VERSION=17.0.12+8-LTS-286, VM_NAME=Java HotSpot(TM) 64-Bit Server VM, VM_VERSION=17.0.12+8-LTS-286, VM_VENDOR=Oracle Corporation, OS_ARCH=amd64}
+Starting process 'Gradle build daemon'. Working directory: C:\Users\Drews\.gradle\daemon\8.14.5 Command: C:\Program Files\Java\jdk-17\bin\java.exe --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=2048m -Xmx8192m -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -cp C:\Users\Drews\.gradle\wrapper\dists\gradle-8.14.5-bin\690y85m0j9nfaub7xoiayko8a\gradle-8.14.5\lib\gradle-daemon-main-8.14.5.jar -javaagent:C:\Users\Drews\.gradle\wrapper\dists\gradle-8.14.5-bin\690y85m0j9nfaub7xoiayko8a\gradle-8.14.5\lib\agents\gradle-instrumentation-agent-8.14.5.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.14.5
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.84 secs.
+The client will now receive all logging from the daemon (pid: 3764). The daemon log file: C:\Users\Drews\.gradle\daemon\8.14.5\daemon-3764.out.log
+Daemon will be stopped at the end of the build 
+Using 12 worker leases.
+Received JVM installation metadata from 'C:\Program Files\Java\jdk-17': {JAVA_HOME=C:\Program Files\Java\jdk-17, JAVA_VERSION=17.0.12, JAVA_VENDOR=Oracle Corporation, RUNTIME_NAME=Java(TM) SE Runtime Environment, RUNTIME_VERSION=17.0.12+8-LTS-286, VM_NAME=Java HotSpot(TM) 64-Bit Server VM, VM_VERSION=17.0.12+8-LTS-286, VM_VENDOR=Oracle Corporation, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Now considering [C:\Users\Drews\AndroidStudioProjects\Chessin] as hierarchies to watch
+File system watching is active
+Starting Build
+Resolved plugin [id: 'org.gradle.toolchains.foojay-resolver-convention', version: '1.0.0']
+Settings evaluated using settings file 'C:\Users\Drews\AndroidStudioProjects\Chessin\settings.gradle.kts'.
+Projects loaded. Root project using build file 'C:\Users\Drews\AndroidStudioProjects\Chessin\build.gradle.kts'.
+Included projects: [root project 'Chessin', project ':app', project ':nnue_assets']
+
+> Configure project :
+Evaluating root project 'Chessin' using build file 'C:\Users\Drews\AndroidStudioProjects\Chessin\build.gradle.kts'.
+Resolved plugin [id: 'com.android.application', version: '8.5.2', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.compose', version: '2.0.20', apply: false]
+Resolved plugin [id: 'com.google.dagger.hilt.android', version: '2.52', apply: false]
+Resolved plugin [id: 'com.google.devtools.ksp', version: '2.0.20-1.0.25', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.android', version: '2.0.20', apply: false]
+
+> Configure project :app
+Evaluating project ':app' using build file 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build.gradle.kts'.
+Resolved plugin [id: 'com.android.application', version: '8.5.2']
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.compose', version: '2.0.20']
+Resolved plugin [id: 'com.google.dagger.hilt.android', version: '2.52']
+Resolved plugin [id: 'com.google.devtools.ksp', version: '2.0.20-1.0.25']
+Resolved plugin [id: 'org.jetbrains.kotlin.android', version: '2.0.20']
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\Drews\AppData\Local\Android\Sdk
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+
+> Configure project :nnue_assets
+Evaluating project ':nnue_assets' using build file 'C:\Users\Drews\AndroidStudioProjects\Chessin\nnue_assets\build.gradle.kts'.
+Resolved plugin [id: 'com.android.asset-pack']
+All projects evaluated.
+Task name matched 'assembleDebug'
+Selected primary task 'assembleDebug' from project :
+Tasks to be executed: [task ':app:checkDebugLibraries', task ':app:preBuild', task ':app:preDebugBuild', task ':app:mergeDebugNativeDebugMetadata', task ':app:checkKotlinGradlePluginConfigurationErrors', task ':app:checkDebugAarMetadata', task ':app:generateDebugResValues', task ':app:mapDebugSourceSetPaths', task ':app:generateDebugResources', task ':app:mergeDebugResources', task ':app:packageDebugResources', task ':app:parseDebugLocalResources', task ':app:createDebugCompatibleScreenManifests', task ':app:extractDeepLinksDebug', task ':app:processDebugMainManifest', task ':app:processDebugManifest', task ':app:processDebugManifestForPackage', task ':app:processDebugResources', task ':app:kspDebugKotlin', task ':app:compileDebugKotlin', task ':app:javaPreCompileDebug', task ':app:compileDebugJavaWithJavac', task ':app:mergeDebugShaders', task ':app:compileDebugShaders', task ':app:generateDebugAssets', task ':app:mergeDebugAssets', task ':app:compressDebugAssets', task ':app:desugarDebugFileDependencies', task ':app:hiltAggregateDepsDebug', task ':app:hiltJavaCompileDebug', task ':app:transformDebugClassesWithAsm', task ':app:dexBuilderDebug', task ':app:mergeDebugGlobalSynthetics', task ':app:processDebugJavaRes', task ':app:mergeDebugJavaResource', task ':app:checkDebugDuplicateClasses', task ':app:mergeDebugStartupProfile', task ':app:mergeExtDexDebug', task ':app:mergeLibDexDebug', task ':app:mergeProjectDexDebug', task ':app:configureCMakeDebug[arm64-v8a]', task ':app:buildCMakeDebug[arm64-v8a]', task ':app:configureCMakeDebug[armeabi-v7a]', task ':app:buildCMakeDebug[armeabi-v7a]', task ':app:configureCMakeDebug[x86_64]', task ':app:buildCMakeDebug[x86_64]', task ':app:mergeDebugJniLibFolders', task ':app:mergeDebugNativeLibs', task ':app:stripDebugDebugSymbols', task ':app:validateSigningDebug', task ':app:writeDebugAppMetadata', task ':app:writeDebugSigningConfigVersions', task ':app:packageDebug', task ':app:createDebugApkListingFileRedirect', task ':app:assembleDebug']
+Tasks that were excluded: []
+Resolve mutations for :app:checkDebugLibraries (Thread[Execution worker Thread 11,5,main]) started.
+:app:checkDebugLibraries (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:checkDebugLibraries UP-TO-DATE
+Caching disabled for task ':app:checkDebugLibraries' because:
+  Build cache is disabled
+Skipping task ':app:checkDebugLibraries' as it is up-to-date.
+Resolve mutations for :app:preBuild (Thread[Execution worker Thread 11,5,main]) started.
+:app:preBuild (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:preBuild UP-TO-DATE
+Skipping task ':app:preBuild' as it has no actions.
+Resolve mutations for :app:preDebugBuild (Thread[Execution worker Thread 11,5,main]) started.
+:app:preDebugBuild (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:preDebugBuild UP-TO-DATE
+Caching disabled for task ':app:preDebugBuild' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:preDebugBuild' as it is up-to-date.
+Resolve mutations for :app:mergeDebugNativeDebugMetadata (Thread[Execution worker Thread 11,5,main]) started.
+:app:mergeDebugNativeDebugMetadata (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+Skipping task ':app:mergeDebugNativeDebugMetadata' as it has no source files and no previous output files.
+Resolve mutations for :app:checkKotlinGradlePluginConfigurationErrors (Thread[Execution worker Thread 11,5,main]) started.
+:app:checkKotlinGradlePluginConfigurationErrors (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':app:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :app:checkDebugAarMetadata (Thread[Execution worker Thread 11,5,main]) started.
+:app:checkDebugAarMetadata (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+Caching disabled for task ':app:checkDebugAarMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:checkDebugAarMetadata' as it is up-to-date.
+Resolve mutations for :app:generateDebugResValues (Thread[Execution worker Thread 11,5,main]) started.
+:app:generateDebugResValues (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:generateDebugResValues UP-TO-DATE
+Caching disabled for task ':app:generateDebugResValues' because:
+  Build cache is disabled
+Skipping task ':app:generateDebugResValues' as it is up-to-date.
+Resolve mutations for :app:mapDebugSourceSetPaths (Thread[Execution worker Thread 11,5,main]) started.
+:app:mapDebugSourceSetPaths (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+Caching disabled for task ':app:mapDebugSourceSetPaths' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:mapDebugSourceSetPaths' as it is up-to-date.
+Resolve mutations for :app:generateDebugResources (Thread[Execution worker Thread 11,5,main]) started.
+:app:generateDebugResources (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:generateDebugResources UP-TO-DATE
+Caching disabled for task ':app:generateDebugResources' because:
+  Build cache is disabled
+Skipping task ':app:generateDebugResources' as it is up-to-date.
+Resolve mutations for :app:mergeDebugResources (Thread[Execution worker Thread 11,5,main]) started.
+:app:mergeDebugResources (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:mergeDebugResources UP-TO-DATE
+Caching disabled for task ':app:mergeDebugResources' because:
+  Build cache is disabled
+Skipping task ':app:mergeDebugResources' as it is up-to-date.
+Resolve mutations for :app:packageDebugResources (Thread[Execution worker Thread 11,5,main]) started.
+:app:packageDebugResources (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:packageDebugResources UP-TO-DATE
+Caching disabled for task ':app:packageDebugResources' because:
+  Build cache is disabled
+Skipping task ':app:packageDebugResources' as it is up-to-date.
+Resolve mutations for :app:parseDebugLocalResources (Thread[Execution worker Thread 11,5,main]) started.
+:app:parseDebugLocalResources (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:parseDebugLocalResources UP-TO-DATE
+Caching disabled for task ':app:parseDebugLocalResources' because:
+  Build cache is disabled
+Skipping task ':app:parseDebugLocalResources' as it is up-to-date.
+Resolve mutations for :app:createDebugCompatibleScreenManifests (Thread[Execution worker Thread 11,5,main]) started.
+:app:createDebugCompatibleScreenManifests (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+Caching disabled for task ':app:createDebugCompatibleScreenManifests' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:createDebugCompatibleScreenManifests' as it is up-to-date.
+Resolve mutations for :app:extractDeepLinksDebug (Thread[Execution worker Thread 11,5,main]) started.
+:app:extractDeepLinksDebug (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+Caching disabled for task ':app:extractDeepLinksDebug' because:
+  Build cache is disabled
+Skipping task ':app:extractDeepLinksDebug' as it is up-to-date.
+Resolve mutations for :app:processDebugMainManifest (Thread[Execution worker Thread 11,5,main]) started.
+:app:processDebugMainManifest (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:processDebugMainManifest UP-TO-DATE
+Caching disabled for task ':app:processDebugMainManifest' because:
+  Build cache is disabled
+Skipping task ':app:processDebugMainManifest' as it is up-to-date.
+Resolve mutations for :app:processDebugManifest (Thread[Execution worker Thread 11,5,main]) started.
+:app:processDebugManifest (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:processDebugManifest UP-TO-DATE
+Caching disabled for task ':app:processDebugManifest' because:
+  Build cache is disabled
+Skipping task ':app:processDebugManifest' as it is up-to-date.
+Resolve mutations for :app:processDebugManifestForPackage (Thread[Execution worker Thread 11,5,main]) started.
+:app:processDebugManifestForPackage (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+Custom actions are attached to task ':app:processDebugManifestForPackage'.
+Caching disabled for task ':app:processDebugManifestForPackage' because:
+  Build cache is disabled
+Skipping task ':app:processDebugManifestForPackage' as it is up-to-date.
+Resolve mutations for :app:processDebugResources (Thread[Execution worker Thread 11,5,main]) started.
+:app:processDebugResources (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:processDebugResources UP-TO-DATE
+Caching disabled for task ':app:processDebugResources' because:
+  Build cache is disabled
+Skipping task ':app:processDebugResources' as it is up-to-date.
+Resolve mutations for :app:kspDebugKotlin (Thread[Execution worker Thread 11,5,main]) started.
+:app:kspDebugKotlin (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:kspDebugKotlin UP-TO-DATE
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\debug\kotlin', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\debug\java', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\kotlin', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\debug\java', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\debug\kotlin', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\debug\java', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\kotlin', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\debug\java', not found
+Caching disabled for task ':app:kspDebugKotlin' because:
+  Build cache is disabled
+Skipping task ':app:kspDebugKotlin' as it is up-to-date.
+Resolve mutations for :app:compileDebugKotlin (Thread[Execution worker Thread 11,5,main]) started.
+:app:compileDebugKotlin (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:compileDebugKotlin UP-TO-DATE
+Caching disabled for task ':app:compileDebugKotlin' because:
+  Build cache is disabled
+Skipping task ':app:compileDebugKotlin' as it is up-to-date.
+Resolve mutations for :app:javaPreCompileDebug (Thread[Execution worker Thread 11,5,main]) started.
+:app:javaPreCompileDebug (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:javaPreCompileDebug UP-TO-DATE
+Caching disabled for task ':app:javaPreCompileDebug' because:
+  Build cache is disabled
+Skipping task ':app:javaPreCompileDebug' as it is up-to-date.
+Resolve mutations for :app:compileDebugJavaWithJavac (Thread[Execution worker Thread 11,5,main]) started.
+:app:compileDebugJavaWithJavac (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+Custom actions are attached to task ':app:compileDebugJavaWithJavac'.
+Caching disabled for task ':app:compileDebugJavaWithJavac' because:
+  Build cache is disabled
+Skipping task ':app:compileDebugJavaWithJavac' as it is up-to-date.
+No compile result for :app:compileDebugJavaWithJavac
+Resolve mutations for :app:mergeDebugShaders (Thread[Execution worker Thread 11,5,main]) started.
+:app:mergeDebugShaders (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:mergeDebugShaders UP-TO-DATE
+Caching disabled for task ':app:mergeDebugShaders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeDebugShaders' as it is up-to-date.
+Resolve mutations for :app:compileDebugShaders (Thread[Execution worker Thread 11,5,main]) started.
+:app:compileDebugShaders (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:compileDebugShaders NO-SOURCE
+Skipping task ':app:compileDebugShaders' as it has no source files and no previous output files.
+Resolve mutations for :app:generateDebugAssets (Thread[Execution worker Thread 11,5,main]) started.
+:app:generateDebugAssets (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:generateDebugAssets UP-TO-DATE
+Skipping task ':app:generateDebugAssets' as it has no actions.
+Resolve mutations for :app:mergeDebugAssets (Thread[Execution worker Thread 11,5,main]) started.
+:app:mergeDebugAssets (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:mergeDebugAssets UP-TO-DATE
+Caching disabled for task ':app:mergeDebugAssets' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeDebugAssets' as it is up-to-date.
+Resolve mutations for :app:compressDebugAssets (Thread[Execution worker Thread 11,5,main]) started.
+:app:compressDebugAssets (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:compressDebugAssets UP-TO-DATE
+Caching disabled for task ':app:compressDebugAssets' because:
+  Build cache is disabled
+Skipping task ':app:compressDebugAssets' as it is up-to-date.
+Resolve mutations for :app:desugarDebugFileDependencies (Thread[Execution worker Thread 11,5,main]) started.
+:app:desugarDebugFileDependencies (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+Caching disabled for task ':app:desugarDebugFileDependencies' because:
+  Build cache is disabled
+Skipping task ':app:desugarDebugFileDependencies' as it is up-to-date.
+Resolve mutations for :app:hiltAggregateDepsDebug (Thread[Execution worker Thread 11,5,main]) started.
+:app:hiltAggregateDepsDebug (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:hiltAggregateDepsDebug UP-TO-DATE
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+Caching disabled for task ':app:hiltAggregateDepsDebug' because:
+  Build cache is disabled
+Skipping task ':app:hiltAggregateDepsDebug' as it is up-to-date.
+Resolve mutations for :app:hiltJavaCompileDebug (Thread[Execution worker Thread 5,5,main]) started.
+:app:hiltJavaCompileDebug (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:hiltJavaCompileDebug UP-TO-DATE
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+Caching disabled for task ':app:hiltJavaCompileDebug' because:
+  Build cache is disabled
+Skipping task ':app:hiltJavaCompileDebug' as it is up-to-date.
+No compile result for :app:hiltJavaCompileDebug
+Resolve mutations for :app:transformDebugClassesWithAsm (Thread[Execution worker Thread 5,5,main]) started.
+:app:transformDebugClassesWithAsm (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:transformDebugClassesWithAsm UP-TO-DATE
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+Caching disabled for task ':app:transformDebugClassesWithAsm' because:
+  Build cache is disabled
+Skipping task ':app:transformDebugClassesWithAsm' as it is up-to-date.
+Resolve mutations for :app:dexBuilderDebug (Thread[Execution worker Thread 5,5,main]) started.
+:app:dexBuilderDebug (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:dexBuilderDebug UP-TO-DATE
+Caching disabled for task ':app:dexBuilderDebug' because:
+  Build cache is disabled
+Skipping task ':app:dexBuilderDebug' as it is up-to-date.
+Resolve mutations for :app:mergeDebugGlobalSynthetics (Thread[Execution worker Thread 5,5,main]) started.
+:app:mergeDebugGlobalSynthetics (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:mergeDebugGlobalSynthetics UP-TO-DATE
+Caching disabled for task ':app:mergeDebugGlobalSynthetics' because:
+  Build cache is disabled
+Skipping task ':app:mergeDebugGlobalSynthetics' as it is up-to-date.
+Resolve mutations for :app:processDebugJavaRes (Thread[Execution worker Thread 5,5,main]) started.
+:app:processDebugJavaRes (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:processDebugJavaRes UP-TO-DATE
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\resources', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\debug\resources', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\resources', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\debug\resources', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+file or directory 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\generated\ksp\debug\classes', not found
+Caching disabled for task ':app:processDebugJavaRes' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:processDebugJavaRes' as it is up-to-date.
+Resolve mutations for :app:mergeDebugJavaResource (Thread[Execution worker Thread 5,5,main]) started.
+:app:mergeDebugJavaResource (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+Caching disabled for task ':app:mergeDebugJavaResource' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:mergeDebugJavaResource' as it is up-to-date.
+Resolve mutations for :app:checkDebugDuplicateClasses (Thread[Execution worker Thread 5,5,main]) started.
+:app:checkDebugDuplicateClasses (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+Caching disabled for task ':app:checkDebugDuplicateClasses' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:checkDebugDuplicateClasses' as it is up-to-date.
+Resolve mutations for :app:mergeDebugStartupProfile (Thread[Execution worker Thread 5,5,main]) started.
+:app:mergeDebugStartupProfile (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:mergeDebugStartupProfile UP-TO-DATE
+Caching disabled for task ':app:mergeDebugStartupProfile' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeDebugStartupProfile' as it is up-to-date.
+Resolve mutations for :app:mergeExtDexDebug (Thread[Execution worker Thread 5,5,main]) started.
+:app:mergeExtDexDebug (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:mergeExtDexDebug UP-TO-DATE
+Caching disabled for task ':app:mergeExtDexDebug' because:
+  Build cache is disabled
+Skipping task ':app:mergeExtDexDebug' as it is up-to-date.
+Resolve mutations for :app:mergeLibDexDebug (Thread[Execution worker Thread 5,5,main]) started.
+:app:mergeLibDexDebug (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:mergeLibDexDebug UP-TO-DATE
+Caching disabled for task ':app:mergeLibDexDebug' because:
+  Build cache is disabled
+Skipping task ':app:mergeLibDexDebug' as it is up-to-date.
+Resolve mutations for :app:mergeProjectDexDebug (Thread[Execution worker Thread 5,5,main]) started.
+:app:mergeProjectDexDebug (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+Caching disabled for task ':app:mergeProjectDexDebug' because:
+  Build cache is disabled
+Skipping task ':app:mergeProjectDexDebug' as it is up-to-date.
+Resolve mutations for :app:configureCMakeDebug[arm64-v8a] (Thread[Execution worker Thread 5,5,main]) started.
+:app:configureCMakeDebug[arm64-v8a] (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:configureCMakeDebug[arm64-v8a]
+Caching disabled for task ':app:configureCMakeDebug[arm64-v8a]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:configureCMakeDebug[arm64-v8a]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\build-tools\33.0.1\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\build-tools\34.0.0\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\build-tools\35.0.0\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\build-tools\36.0.0\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\build-tools\36.1.0\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\build-tools\37.0.0\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\build\templates\package.xml
+[CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+[CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\emulator\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\extras\android\m2repository\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\extras\google\Android_Emulator_Hypervisor_Driver\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\extras\google\usb_driver\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\ndk\28.2.13676358\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\platform-tools\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\platforms\android-34\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\platforms\android-35\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\platforms\android-36\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\platforms\android-36.1\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\platforms\android-37.0\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\sources\android-36.1\package.xml
+C/C++: Parsing C:\Users\Drews\AppData\Local\Android\Sdk\system-images\android-37.0\google_apis_playstore_ps16k\x86_64\package.xml
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : Start JSON generation. Platform version: 26 min SDK version: arm64-v8a
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : rebuilding JSON C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\arm64-v8a\android_gradle_build.json due to:
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : - a file changed
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a :   - C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt (LAST_MODIFIED_CHANGED)
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : keeping json folder 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\arm64-v8a' but regenerating project
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : executing cmake @echo off
+"C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\cmake.exe" ^
+  "-HC:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\src\\main\\cpp" ^
+  "-DCMAKE_SYSTEM_NAME=Android" ^
+  "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" ^
+  "-DCMAKE_SYSTEM_VERSION=26" ^
+  "-DANDROID_PLATFORM=android-26" ^
+  "-DANDROID_ABI=arm64-v8a" ^
+  "-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a" ^
+  "-DANDROID_NDK=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_ANDROID_NDK=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake" ^
+  "-DCMAKE_MAKE_PROGRAM=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+  "-DCMAKE_CXX_FLAGS=-std=c++17 -O3 -fexceptions" ^
+  "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\build\\intermediates\\cxx\\Debug\\5s106x58\\obj\\arm64-v8a" ^
+  "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\build\\intermediates\\cxx\\Debug\\5s106x58\\obj\\arm64-v8a" ^
+  "-DCMAKE_BUILD_TYPE=Debug" ^
+  "-BC:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\arm64-v8a" ^
+  -GNinja
+
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : @echo off
+"C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\cmake.exe" ^
+  "-HC:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\src\\main\\cpp" ^
+  "-DCMAKE_SYSTEM_NAME=Android" ^
+  "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" ^
+  "-DCMAKE_SYSTEM_VERSION=26" ^
+  "-DANDROID_PLATFORM=android-26" ^
+  "-DANDROID_ABI=arm64-v8a" ^
+  "-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a" ^
+  "-DANDROID_NDK=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_ANDROID_NDK=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake" ^
+  "-DCMAKE_MAKE_PROGRAM=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+  "-DCMAKE_CXX_FLAGS=-std=c++17 -O3 -fexceptions" ^
+  "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\build\\intermediates\\cxx\\Debug\\5s106x58\\obj\\arm64-v8a" ^
+  "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\build\\intermediates\\cxx\\Debug\\5s106x58\\obj\\arm64-v8a" ^
+  "-DCMAKE_BUILD_TYPE=Debug" ^
+  "-BC:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\arm64-v8a" ^
+  -GNinja
+
+Starting process 'command 'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe''. Working directory: C:\Users\Drews\AndroidStudioProjects\Chessin\app Command: C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe -HC:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp -DCMAKE_SYSTEM_NAME=Android -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_SYSTEM_VERSION=26 -DANDROID_PLATFORM=android-26 -DANDROID_ABI=arm64-v8a -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DANDROID_NDK=C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973 -DCMAKE_ANDROID_NDK=C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973 -DCMAKE_TOOLCHAIN_FILE=C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\build\cmake\android.toolchain.cmake -DCMAKE_MAKE_PROGRAM=C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe -DCMAKE_CXX_FLAGS=-std=c++17 -O3 -fexceptions -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\intermediates\cxx\Debug\5s106x58\obj\arm64-v8a -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\intermediates\cxx\Debug\5s106x58\obj\arm64-v8a -DCMAKE_BUILD_TYPE=Debug -BC:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\arm64-v8a -GNinja
+Successfully started process 'command 'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe''
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : Received process result: 0
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : Exiting generation of C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\arm64-v8a\compile_commands.json.bin normally
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : done executing cmake
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : hard linked C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\arm64-v8a\compile_commands.json to C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\tools\debug\arm64-v8a\compile_commands.json
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : JSON generation completed without problems
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|arm64-v8a : Writing build model to C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\intermediates\cxx\Debug\5s106x58\logs\arm64-v8a\build_model.json
+Resolve mutations for :app:buildCMakeDebug[arm64-v8a] (Thread[Execution worker Thread 5,5,main]) started.
+:app:buildCMakeDebug[arm64-v8a] (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:buildCMakeDebug[arm64-v8a]
+Caching disabled for task ':app:buildCMakeDebug[arm64-v8a]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:buildCMakeDebug[arm64-v8a]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: starting build
+C/C++: reading expected JSONs
+C/C++: done reading expected JSONs
+C/C++: executing build commands for targets that produce .so files or executables
+C/C++: evaluate miniconfig
+C/C++: evaluate library stockfish-core (arm64-v8a)
+C/C++: not building target library stockfish-core because static libraries are not build by default.
+C/C++: evaluate library stockfish-jni (arm64-v8a)
+C/C++: building target library stockfish-jni because no targets are specified.
+C/C++: about to build targets stockfish-jni
+C/C++: Build stockfish-jni
+C/C++: @echo off
+"C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+  -C ^
+  "C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\arm64-v8a" ^
+  stockfish-jni
+
+Starting process 'command 'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe''. Working directory: C:\Users\Drews\AndroidStudioProjects\Chessin\app Command: C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe -C C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\arm64-v8a stockfish-jni
+Successfully started process 'command 'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe''
+C/C++: Received process result: 0
+C/C++: check expected build outputs
+C/C++: build complete
+Resolve mutations for :app:configureCMakeDebug[armeabi-v7a] (Thread[Execution worker Thread 4,5,main]) started.
+:app:configureCMakeDebug[armeabi-v7a] (Thread[Execution worker Thread 4,5,main]) started.
+
+> Task :app:configureCMakeDebug[armeabi-v7a]
+Caching disabled for task ':app:configureCMakeDebug[armeabi-v7a]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:configureCMakeDebug[armeabi-v7a]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : Start JSON generation. Platform version: 26 min SDK version: armeabi-v7a
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : rebuilding JSON C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a\android_gradle_build.json due to:
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : - a file changed
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a :   - C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt (LAST_MODIFIED_CHANGED)
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : keeping json folder 'C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a' but regenerating project
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : executing cmake @echo off
+"C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\cmake.exe" ^
+  "-HC:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\src\\main\\cpp" ^
+  "-DCMAKE_SYSTEM_NAME=Android" ^
+  "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" ^
+  "-DCMAKE_SYSTEM_VERSION=26" ^
+  "-DANDROID_PLATFORM=android-26" ^
+  "-DANDROID_ABI=armeabi-v7a" ^
+  "-DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a" ^
+  "-DANDROID_NDK=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_ANDROID_NDK=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake" ^
+  "-DCMAKE_MAKE_PROGRAM=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+  "-DCMAKE_CXX_FLAGS=-std=c++17 -O3 -fexceptions" ^
+  "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\build\\intermediates\\cxx\\Debug\\5s106x58\\obj\\armeabi-v7a" ^
+  "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\build\\intermediates\\cxx\\Debug\\5s106x58\\obj\\armeabi-v7a" ^
+  "-DCMAKE_BUILD_TYPE=Debug" ^
+  "-BC:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\armeabi-v7a" ^
+  -GNinja
+
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : @echo off
+"C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\cmake.exe" ^
+  "-HC:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\src\\main\\cpp" ^
+  "-DCMAKE_SYSTEM_NAME=Android" ^
+  "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" ^
+  "-DCMAKE_SYSTEM_VERSION=26" ^
+  "-DANDROID_PLATFORM=android-26" ^
+  "-DANDROID_ABI=armeabi-v7a" ^
+  "-DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a" ^
+  "-DANDROID_NDK=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_ANDROID_NDK=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake" ^
+  "-DCMAKE_MAKE_PROGRAM=C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+  "-DCMAKE_CXX_FLAGS=-std=c++17 -O3 -fexceptions" ^
+  "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\build\\intermediates\\cxx\\Debug\\5s106x58\\obj\\armeabi-v7a" ^
+  "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\build\\intermediates\\cxx\\Debug\\5s106x58\\obj\\armeabi-v7a" ^
+  "-DCMAKE_BUILD_TYPE=Debug" ^
+  "-BC:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\armeabi-v7a" ^
+  -GNinja
+
+Starting process 'command 'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe''. Working directory: C:\Users\Drews\AndroidStudioProjects\Chessin\app Command: C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe -HC:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp -DCMAKE_SYSTEM_NAME=Android -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_SYSTEM_VERSION=26 -DANDROID_PLATFORM=android-26 -DANDROID_ABI=armeabi-v7a -DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a -DANDROID_NDK=C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973 -DCMAKE_ANDROID_NDK=C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973 -DCMAKE_TOOLCHAIN_FILE=C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\build\cmake\android.toolchain.cmake -DCMAKE_MAKE_PROGRAM=C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe -DCMAKE_CXX_FLAGS=-std=c++17 -O3 -fexceptions -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\intermediates\cxx\Debug\5s106x58\obj\armeabi-v7a -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\intermediates\cxx\Debug\5s106x58\obj\armeabi-v7a -DCMAKE_BUILD_TYPE=Debug -BC:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a -GNinja
+Successfully started process 'command 'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe''
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : Received process result: 0
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : Exiting generation of C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a\compile_commands.json.bin normally
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : done executing cmake
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : hard linked C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a\compile_commands.json to C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\tools\debug\armeabi-v7a\compile_commands.json
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : JSON generation completed without problems
+C/C++: C:\Users\Drews\AndroidStudioProjects\Chessin\app\src\main\cpp\CMakeLists.txt debug|armeabi-v7a : Writing build model to C:\Users\Drews\AndroidStudioProjects\Chessin\app\build\intermediates\cxx\Debug\5s106x58\logs\armeabi-v7a\build_model.json
+Resolve mutations for :app:buildCMakeDebug[armeabi-v7a] (Thread[Execution worker Thread 5,5,main]) started.
+:app:buildCMakeDebug[armeabi-v7a] (Thread[Execution worker Thread 5,5,main]) started.
+
+> Task :app:buildCMakeDebug[armeabi-v7a]
+Caching disabled for task ':app:buildCMakeDebug[armeabi-v7a]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:buildCMakeDebug[armeabi-v7a]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: starting build
+C/C++: reading expected JSONs
+C/C++: done reading expected JSONs
+C/C++: executing build commands for targets that produce .so files or executables
+C/C++: evaluate miniconfig
+C/C++: evaluate library stockfish-core (armeabi-v7a)
+C/C++: not building target library stockfish-core because static libraries are not build by default.
+C/C++: evaluate library stockfish-jni (armeabi-v7a)
+C/C++: building target library stockfish-jni because no targets are specified.
+C/C++: about to build targets stockfish-jni
+C/C++: Build stockfish-jni
+C/C++: @echo off
+"C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+  -C ^
+  "C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\armeabi-v7a" ^
+  stockfish-jni
+
+Starting process 'command 'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe''. Working directory: C:\Users\Drews\AndroidStudioProjects\Chessin\app Command: C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe -C C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a stockfish-jni
+Successfully started process 'command 'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe''
+C/C++: Received process result: 1
+
+> Task :app:buildCMakeDebug[armeabi-v7a] FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/Drews/AndroidStudioProjects/Chessin/build/reports/problems/problems-report.html
+.\gradlew.bat : 
+At line:2 char:1
++ .\gradlew.bat assembleDebug --no-daemon --stacktrace --info > C:\User ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:buildCMakeDebug[armeabi-v7a]'.
+> com.android.ide.common.process.ProcessException: ninja: Entering directory 
+`C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a'
+  [1/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o
+  [2/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o
+  [3/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o
+  [4/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o
+  [5/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o
+  [6/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o
+  [7/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o
+  [8/11] Building CXX object CMakeFiles/stockfish-jni.dir/native-lib_real.cpp.o
+  [9/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o
+  [10/11] Linking CXX static library libstockfish-core.a
+  FAILED: libstockfish-core.a 
+  cmd.exe /C "cd . && C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe -E rm -f libstockfish-core.a 
+&& C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-ar.exe 
+qc libstockfish-core.a  CMakeFiles/stockfish-core.dir/stockfish/src/attacks.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/benchmark.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/bitboard.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/engine.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/evaluate.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/memory.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/movegen.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/movepick.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/position.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/score.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/search.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/thread.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/timeman.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/tt.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/tune.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/uci.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/ucioption.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o && 
+C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-ranlib.exe 
+libstockfish-core.a && cd ."
+  LLVM ERROR: IO failure on output stream: No space left on device
+  PLEASE submit a bug report to https://github.com/android-ndk/ndk/issues and include the crash backtrace.
+  Stack dump:
+  0.	Program arguments: C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\
+\windows-x86_64\\bin\\llvm-ar.exe qc libstockfish-core.a CMakeFiles/stockfish-core.dir/stockfish/src/attacks.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/benchmark.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/bitboard.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/engine.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/evaluate.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/memory.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/movegen.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/movepick.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/position.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/score.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/search.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/thread.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/timeman.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/tt.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/tune.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/uci.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/ucioption.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o
+  ninja: build stopped: subcommand failed.
+  
+  C++ build system [build] failed while executing:
+      @echo off
+      "C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+        -C ^
+        "C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\armeabi-v7a" ^
+        stockfish-jni
+    from C:\Users\Drews\AndroidStudioProjects\Chessin\app
+
+* Try:
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:buildCMakeDebug[armeabi-v7a]'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecut
+er.java:130)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+	at 
+org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskEx
+ecuter.java:41)
+	at 
+org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.j
+ava:51)
+	at 
+org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGrap
+h.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGrap
+h.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(Defaul
+tTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExec
+utionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExec
+utionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+Caused by: org.gradle.internal.UncheckedException: com.android.ide.common.process.ProcessException: ninja: Entering 
+directory `C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a'
+[1/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o
+[2/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o
+[3/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o
+[4/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o
+[5/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o
+[6/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o
+[7/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o
+[8/11] Building CXX object CMakeFiles/stockfish-jni.dir/native-lib_real.cpp.o
+[9/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o
+[10/11] Linking CXX static library libstockfish-core.a
+FAILED: libstockfish-core.a 
+cmd.exe /C "cd . && C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe -E rm -f libstockfish-core.a 
+&& C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-ar.exe 
+qc libstockfish-core.a  CMakeFiles/stockfish-core.dir/stockfish/src/attacks.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/benchmark.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/bitboard.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/engine.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/evaluate.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/memory.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/movegen.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/movepick.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/position.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/score.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/search.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/thread.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/timeman.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/tt.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/tune.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/uci.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/ucioption.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o && 
+C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-ranlib.exe 
+libstockfish-core.a && cd ."
+LLVM ERROR: IO failure on output stream: No space left on device
+PLEASE submit a bug report to https://github.com/android-ndk/ndk/issues and include the crash backtrace.
+Stack dump:
+0.	Program arguments: C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\w
+indows-x86_64\\bin\\llvm-ar.exe qc libstockfish-core.a CMakeFiles/stockfish-core.dir/stockfish/src/attacks.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/benchmark.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/bitboard.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/engine.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/evaluate.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/memory.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/movegen.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/movepick.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/position.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/score.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/search.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/thread.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/timeman.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/tt.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/tune.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/uci.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/ucioption.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o
+ninja: build stopped: subcommand failed.
+
+C++ build system [build] failed while executing:
+    @echo off
+    "C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+      -C ^
+      "C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\armeabi-v7a" ^
+      stockfish-jni
+  from C:\Users\Drews\AndroidStudioProjects\Chessin\app
+	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:69)
+	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:42)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:128)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:244)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:229)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:212)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:195)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:162)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
+	at 
+org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+	at 
+org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:75)
+	at org.gradle.internal.Either$Right.fold(Either.java:175)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:73)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:48)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:46)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:35)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishe
+dStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishe
+dStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingSta
+teStep.java:49)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingSta
+teStep.java:27)
+	at 
+org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:71)
+	at 
+org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:39)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:107)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:56)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecu
+tionStep.java:64)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecu
+tionStep.java:43)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.
+java:125)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:56)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedS
+tep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:75)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:41)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:289)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationF
+iringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep
+.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep
+.java:39)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:48)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:35)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:64)
+	at 
+org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:127)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskEx
+ecuter.java:41)
+	at 
+org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.j
+ava:51)
+	at 
+org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGrap
+h.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGrap
+h.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(Defaul
+tTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExec
+utionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExec
+utionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+Caused by: com.android.ide.common.process.ProcessException: ninja: Entering directory 
+`C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a'
+[1/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o
+[2/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o
+[3/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o
+[4/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o
+[5/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o
+[6/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o
+[7/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o
+[8/11] Building CXX object CMakeFiles/stockfish-jni.dir/native-lib_real.cpp.o
+[9/11] Building CXX object CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o
+[10/11] Linking CXX static library libstockfish-core.a
+FAILED: libstockfish-core.a 
+cmd.exe /C "cd . && C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe -E rm -f libstockfish-core.a 
+&& C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-ar.exe 
+qc libstockfish-core.a  CMakeFiles/stockfish-core.dir/stockfish/src/attacks.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/benchmark.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/bitboard.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/engine.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/evaluate.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/memory.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/movegen.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/movepick.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/position.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/score.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/search.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/thread.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/timeman.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/tt.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/tune.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/uci.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/ucioption.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o && 
+C:\Users\Drews\AppData\Local\Android\Sdk\ndk\27.0.12077973\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-ranlib.exe 
+libstockfish-core.a && cd ."
+LLVM ERROR: IO failure on output stream: No space left on device
+PLEASE submit a bug report to https://github.com/android-ndk/ndk/issues and include the crash backtrace.
+Stack dump:
+0.	Program arguments: C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\w
+indows-x86_64\\bin\\llvm-ar.exe qc libstockfish-core.a CMakeFiles/stockfish-core.dir/stockfish/src/attacks.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/benchmark.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/bitboard.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/engine.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/evaluate.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/memory.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/movegen.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/movepick.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/full_threats.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/half_ka_v2_hm.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/features/pp_3wide.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/network.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_accumulator.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/nnue/nnue_misc.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/position.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/score.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/search.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/syzygy/tbprobe.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/thread.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/timeman.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/tt.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/tune.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/uci.cpp.o CMakeFiles/stockfish-core.dir/stockfish/src/ucioption.cpp.o 
+CMakeFiles/stockfish-core.dir/stockfish/src/universal/entry_arm64.cpp.o
+ninja: build stopped: subcommand failed.
+
+C++ build system [build] failed while executing:
+    @echo off
+    "C:\\Users\\Drews\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+      -C ^
+      "C:\\Users\\Drews\\AndroidStudioProjects\\Chessin\\app\\.cxx\\Debug\\5s106x58\\armeabi-v7a" ^
+      stockfish-jni
+  from C:\Users\Drews\AndroidStudioProjects\Chessin\app
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.execute(ExecuteProcess.kt:288)
+
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt$executeProcess$1.invoke(ExecuteProcess.kt:108)
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt$executeProcess$1.invoke(ExecuteProcess.kt:106)
+	at com.android.build.gradle.internal.cxx.timing.TimingEnvironmentKt.time(TimingEnvironment.kt:32)
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.executeProcess(ExecuteProcess.kt:106)
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+39 actionable tasks: 4 executed, 35 up-to-date
+Watched directory hierarchies: [C:\Users\Drews\AndroidStudioProjects\Chessin]
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.executeProcess$default(ExecuteProcess.kt:85)
+	at com.android.build.gradle.internal.cxx.build.CxxRegularBuilder.executeProcessBatch(CxxRegularBuilder.kt:332)
+	at com.android.build.gradle.internal.cxx.build.CxxRegularBuilder.build(CxxRegularBuilder.kt:129)
+	at 
+com.android.build.gradle.tasks.ExternalNativeBuildTask$doTaskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:70)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.tasks.ExternalNativeBuildTask.doTaskAction(ExternalNativeBuildTask.kt:145)
+	at 
+com.android.build.gradle.internal.tasks.UnsafeOutputsTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:65)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask.taskAction(UnsafeOutputsTask.kt:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	... 117 more
+Caused by: com.android.ide.common.process.ProcessException: Error while executing process 
+C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe with arguments {-C 
+C:\Users\Drews\AndroidStudioProjects\Chessin\app\.cxx\Debug\5s106x58\armeabi-v7a stockfish-jni}
+	at com.android.build.gradle.internal.process.GradleProcessResult.buildProcessException(GradleProcessResult.java:73)
+	at com.android.build.gradle.internal.process.GradleProcessResult.assertNormalExitValue(GradleProcessResult.java:48)
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.execute(ExecuteProcess.kt:277)
+	... 134 more
+Caused by: org.gradle.process.internal.ExecException: Process 'command 
+'C:\Users\Drews\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe'' finished with non-zero exit value 1
+	at org.gradle.process.internal.DefaultExecHandle$ExecResultImpl.assertNormalExitValue(DefaultExecHandle.java:442)
+	at com.android.build.gradle.internal.process.GradleProcessResult.assertNormalExitValue(GradleProcessResult.java:46)
+	... 135 more
+
+
+BUILD FAILED in 12s

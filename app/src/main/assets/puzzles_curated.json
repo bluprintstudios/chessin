@@ -1,0 +1,72 @@
+[
+  {
+    "id": "000a3",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+    "solutionMoves": "d2d4 e5d4 f3d4",
+    "rating": 1100,
+    "themes": "advantage,opening,short"
+  },
+  {
+    "id": "000s1",
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/4p3/1bB1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
+    "solutionMoves": "c3d5 f6d5 c4d5",
+    "rating": 1250,
+    "themes": "opening,short"
+  },
+  {
+    "id": "000m1",
+    "fen": "6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1",
+    "solutionMoves": "a1a8",
+    "rating": 900,
+    "themes": "mate,mateIn1,backRankMate"
+  },
+  {
+    "id": "000m2",
+    "fen": "r1b2rk1/2q1bppp/p2p4/1p1Pp3/4N3/3B3P/PPP2PP1/R2QR1K1 w - - 0 16",
+    "solutionMoves": "d1h5 g7g6 h5h6",
+    "rating": 1400,
+    "themes": "kingsideAttack,short,middlegame"
+  },
+  {
+    "id": "000f1",
+    "fen": "r1bqk2r/pppp1ppp/2n5/4P3/2B1n3/5N2/PPP2PPP/RNBQ1RK1 b kq - 0 6",
+    "solutionMoves": "d7d5 c4d5",
+    "rating": 1300,
+    "themes": "fork,tactics"
+  },
+  {
+    "id": "000p1",
+    "fen": "2r3k1/1p3ppp/p7/3p1N2/8/1P3P2/P2rn1PP/R3R2K w - - 2 26",
+    "solutionMoves": "f5e7 g8f8 e7c8",
+    "rating": 1350,
+    "themes": "fork,advantage"
+  },
+  {
+    "id": "000q1",
+    "fen": "r1b2r1k/pp3ppp/2n5/2pqp3/8/2B1PN2/PP2QPPP/R4RK1 w - - 0 14",
+    "solutionMoves": "f3e5 c6e5 f1d1",
+    "rating": 1550,
+    "themes": "tactics,middlegame"
+  },
+  {
+    "id": "000s2",
+    "fen": "2rq1rk1/1p1b1ppp/p1np1n2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 4 12",
+    "solutionMoves": "d1b3 c6a5",
+    "rating": 1600,
+    "themes": "middlegame,short"
+  },
+  {
+    "id": "000m3",
+    "fen": "r2q1rk1/pb1nbppp/1p2p3/2ppP3/3P1B2/2PB1N2/PP3PPP/R2QR1K1 w - - 0 13",
+    "solutionMoves": "d3h7 g8h7 f3g5 e7g5",
+    "rating": 1700,
+    "themes": "sacrifice,kingsideAttack"
+  },
+  {
+    "id": "000e1",
+    "fen": "3r2k1/ppp2p1p/6p1/1N2p3/2Q1P3/1P3P2/P1P2qPP/2K1R3 w - - 1 20",
+    "solutionMoves": "c4e2 f2e2 e1e2",
+    "rating": 1800,
+    "themes": "endgame,advantage"
+  }
+]

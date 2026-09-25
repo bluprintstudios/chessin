@@ -1,0 +1,258 @@
+package com.pro.chessin.domain.analysis
+
+import android.content.Context
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import com.pro.chessin.data.engine.EngineSessionManager
+import com.pro.chessin.data.engine.NNUEAssetPackManager
+import com.pro.chessin.domain.chess.ChessBoardState
+import com.pro.chessin.domain.chess.Color
+import com.pro.chessin.domain.chess.Move
+import com.pro.chessin.domain.chess.Piece
+import com.pro.chessin.domain.chess.PieceType
+import com.pro.chessin.domain.chess.Square
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
+import org.junit.After
+import java.io.File
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+
+/**
+ * End-to-end test for MoveAnalyzer running on a full real game with the actual Stockfish engine.
+ * This test verifies that MoveAnalyzer can classify every move in a game without crashes or null results.
+ */
+@RunWith(AndroidJUnit4::class)
+class MoveAnalyzerEndToEndTest {
+
+    private lateinit var engineSessionManager: EngineSessionManager
+    private lateinit var assetPackManager: NNUEAssetPackManager
+    private lateinit var analyzer: MoveAnalyzer
+    private lateinit var context: Context
+
+    @Before
+    fun setup() {
+        context = InstrumentationRegistry.getInstrumentation().targetContext
+        engineSessionManager = EngineSessionManager()
+        assetPackManager = NNUEAssetPackManager(context)
+        analyzer = MoveAnalyzer(engineSessionManager, analysisDepth = 10) // Use lower depth for faster tests
+
+        // Copy NNUE file from assets to cache for test
+        copyNnueFileFromAssets()
+    }
+
+    private fun copyNnueFileFromAssets() {
+        try {
+            val assetManager = context.assets
+            val nnueFileName = "nn-1a298aa575a0.nnue"
+            val cacheDir = context.cacheDir
+            val nnueDir = File(cacheDir, "assets/nnue_assets")
+            nnueDir.mkdirs()
+            val nnueFile = File(nnueDir, nnueFileName)
+
+            if (!nnueFile.exists()) {
+                assetManager.open(nnueFileName).use { inputStream ->
+                    nnueFile.outputStream().use { outputStream ->
+                        inputStream.copyTo(outputStream)
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            throw RuntimeException("Failed to copy NNUE file from assets", e)
+        }
+    }
+
+    @After
+    fun tearDown() {
+        // Engine will be stopped in each test's finally block
+    }
+
+    /**
+     * Tests analysis of a short game (Italian Game opening).
+     * Verifies that every move gets a classification without crashes.
+     */
+    @Test
+    fun testFullGameAnalysis() = runBlocking {
+        try {
+            // Get NNUE path and start engine
+            val nnuePath = assetPackManager.getAssetPackPath()
+            val startResult = engineSessionManager.startEngine(nnuePath)
+            if (startResult.isFailure) {
+                throw RuntimeException("Failed to start engine: ${startResult.exceptionOrNull()?.message}")
+            }
+
+            // Wait for engine to initialize
+            delay(500)
+
+            // Italian Game: 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb4+
+            val moves = listOf(
+                // White moves
+                Move.simple(Square.E2, Square.E4, Piece(PieceType.PAWN, Color.WHITE)),
+                Move.simple(Square.G1, Square.F3, Piece(PieceType.KNIGHT, Color.WHITE)),
+                Move.simple(Square.F1, Square.C4, Piece(PieceType.BISHOP, Color.WHITE)),
+                Move.simple(Square.C2, Square.C3, Piece(PieceType.PAWN, Color.WHITE)),
+                Move.simple(Square.D2, Square.D4, Piece(PieceType.PAWN, Color.WHITE)),
+                Move.simple(Square.C3, Square.D4, Piece(PieceType.PAWN, Color.WHITE)),
+                // Black moves
+                Move.simple(Square.E7, Square.E5, Piece(PieceType.PAWN, Color.BLACK)),
+                Move.simple(Square.B8, Square.C6, Piece(PieceType.KNIGHT, Color.BLACK)),
+                Move.simple(Square.F8, Square.C5, Piece(PieceType.BISHOP, Color.BLACK)),
+                Move.simple(Square.G8, Square.F6, Piece(PieceType.KNIGHT, Color.BLACK)),
+                Move.simple(Square.E5, Square.D4, Piece(PieceType.PAWN, Color.BLACK)),
+                Move.simple(Square.C5, Square.B4, Piece(PieceType.BISHOP, Color.BLACK))
+            )
+
+            var board = ChessBoardState.startPosition()
+            val classifications = mutableListOf<ClassificationTier>()
+
+            // Analyze each move in sequence
+            for ((index, move) in moves.withIndex()) {
+                val sideToMove = if (index % 2 == 0) Color.WHITE else Color.BLACK
+
+                // Apply the move to get the after-state
+                val afterBoard = board.makeMove(move)
+
+                // Analyze the move
+                val result = analyzer.analyze(
+                    beforeState = board,
+                    afterState = afterBoard,
+                    sideToMove = sideToMove,
+                    isBookMove = false
+                )
+
+                // Verify we got a valid classification
+                assert(result.tier != null) { "Move $index should have a classification" }
+                classifications.add(result.tier)
+
+                // Move to the next position
+                board = afterBoard
+            }
+
+            // Verify we classified all moves
+            assert(classifications.size == moves.size) { "Should classify all moves" }
+
+            println("Game classifications: ${classifications.map { it.name }}")
+        } finally {
+            engineSessionManager.stopEngine()
+        }
+    }
+
+    /**
+     * Tests analysis of a game ending in checkmate.
+     * Verifies that the analysis handles terminal positions correctly.
+     */
+    @Test
+    fun testCheckmateGameAnalysis() = runBlocking {
+        try {
+            // Get NNUE path and start engine
+            val nnuePath = assetPackManager.getAssetPackPath()
+            val startResult = engineSessionManager.startEngine(nnuePath)
+            if (startResult.isFailure) {
+                throw RuntimeException("Failed to start engine: ${startResult.exceptionOrNull()?.message}")
+            }
+
+            // Wait for engine to initialize
+            delay(500)
+
+            // Scholar's Mate: 1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6?? 4.Qxf7#
+            val moves = listOf(
+                Move.simple(Square.E2, Square.E4, Piece(PieceType.PAWN, Color.WHITE)),
+                Move.simple(Square.E7, Square.E5, Piece(PieceType.PAWN, Color.BLACK)),
+                Move.simple(Square.F1, Square.C4, Piece(PieceType.BISHOP, Color.WHITE)),
+                Move.simple(Square.B8, Square.C6, Piece(PieceType.KNIGHT, Color.BLACK)),
+                Move.simple(Square.D1, Square.H5, Piece(PieceType.QUEEN, Color.WHITE)),
+                Move.simple(Square.G8, Square.F6, Piece(PieceType.KNIGHT, Color.BLACK)),
+                Move.capture(Square.H5, Square.F7, Piece(PieceType.QUEEN, Color.WHITE))
+            )
+
+            var board = ChessBoardState.startPosition()
+            val classifications = mutableListOf<ClassificationTier>()
+
+            for ((index, move) in moves.withIndex()) {
+                val sideToMove = if (index % 2 == 0) Color.WHITE else Color.BLACK
+
+                val afterBoard = board.makeMove(move)
+
+                val result = analyzer.analyze(
+                    beforeState = board,
+                    afterState = afterBoard,
+                    sideToMove = sideToMove,
+                    isBookMove = false
+                )
+
+                assert(result.tier != null) { "Move $index should have a classification" }
+                classifications.add(result.tier)
+
+                board = afterBoard
+
+                // Stop if we've reached checkmate
+                if (afterBoard.isCheckmate()) {
+                    break
+                }
+            }
+
+            // Verify we classified at least some moves
+            assert(classifications.size > 0) { "Should classify at least some moves" }
+
+            println("Checkmate game classifications: ${classifications.map { it.name }}")
+        } finally {
+            engineSessionManager.stopEngine()
+        }
+    }
+
+    /**
+     * Tests analysis of a game with a resignation.
+     * Verifies that the analysis handles non-terminal game endings correctly.
+     */
+    @Test
+    fun testResignationGameAnalysis() = runBlocking {
+        try {
+            // Get NNUE path and start engine
+            val nnuePath = assetPackManager.getAssetPackPath()
+            val startResult = engineSessionManager.startEngine(nnuePath)
+            if (startResult.isFailure) {
+                throw RuntimeException("Failed to start engine: ${startResult.exceptionOrNull()?.message}")
+            }
+
+            // Wait for engine to initialize
+            delay(500)
+
+            // A short game where one side resigns mid-game
+            val moves = listOf(
+                Move.simple(Square.E2, Square.E4, Piece(PieceType.PAWN, Color.WHITE)),
+                Move.simple(Square.E7, Square.E5, Piece(PieceType.PAWN, Color.BLACK)),
+                Move.simple(Square.G1, Square.F3, Piece(PieceType.KNIGHT, Color.WHITE)),
+                Move.simple(Square.B8, Square.C6, Piece(PieceType.KNIGHT, Color.BLACK)),
+                Move.simple(Square.F1, Square.B5, Piece(PieceType.BISHOP, Color.WHITE))
+            )
+
+            var board = ChessBoardState.startPosition()
+            val classifications = mutableListOf<ClassificationTier>()
+
+            for ((index, move) in moves.withIndex()) {
+                val sideToMove = if (index % 2 == 0) Color.WHITE else Color.BLACK
+
+                val afterBoard = board.makeMove(move)
+
+                val result = analyzer.analyze(
+                    beforeState = board,
+                    afterState = afterBoard,
+                    sideToMove = sideToMove,
+                    isBookMove = false
+                )
+
+                assert(result.tier != null) { "Move $index should have a classification" }
+                classifications.add(result.tier)
+
+                board = afterBoard
+            }
+
+            assert(classifications.size == moves.size) { "Should classify all moves" }
+
+            println("Resignation game classifications: ${classifications.map { it.name }}")
+        } finally {
+            engineSessionManager.stopEngine()
+        }
+    }
+}
