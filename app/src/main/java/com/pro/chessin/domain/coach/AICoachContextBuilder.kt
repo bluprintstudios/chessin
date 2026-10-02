@@ -29,6 +29,7 @@ object AICoachContextBuilder {
         move: MoveEntity,
         game: GameEntity,
         priorPly: List<MoveEntity>,
+        deltaCp: Int,
         maxTokenBudget: Int = DEFAULT_TOKEN_BUDGET
     ): CoachContext {
         // Determine fenBefore from prior move or starting position
@@ -41,8 +42,8 @@ object AICoachContextBuilder {
         // Extract alternative MultiPV lines from move entity if present
         var altLines = parseAlternativeLines(move.alternativeLinesJson).take(MAX_ALT_LINES)
 
-        // Calculate delta (default 0 if null)
-        val evalDeltaCp = move.evalCp ?: 0
+        // Use the provided deltaCp
+        val evalDeltaCp = deltaCp
 
         var currentContext = CoachContext(
             fenBefore = fenBefore,

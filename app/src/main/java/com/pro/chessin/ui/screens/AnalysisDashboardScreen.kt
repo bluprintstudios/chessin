@@ -18,17 +18,22 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -40,7 +45,6 @@ import com.pro.chessin.domain.analysis.AnalyzedMove
 import com.pro.chessin.domain.analysis.ClassificationTier
 import com.pro.chessin.domain.chess.ChessBoardState
 import com.pro.chessin.ui.components.BoardOrientation
-import com.pro.chessin.ui.components.ChessBoardSize
 import com.pro.chessin.ui.components.Chessboard
 import com.pro.chessin.ui.components.EvaluationBar
 import com.pro.chessin.ui.screens.viewmodels.AnalysisDashboardViewModel
@@ -48,19 +52,10 @@ import com.pro.chessin.ui.theme.ClassificationColors
 
 /**
  * Full-screen analysis dashboard showing:
- * - An evaluation bar + chess board for the currently selected move
+ * - An interactive chess board + evaluation bar
+ * - Top Action Bar with "Paste PGN" and "Sample Game" options
  * - A move list with per-move classifications and deltas
- * - An explanation panel describing the selected move
- * - A progress bar and Cancel / Retry buttons
- *
- * The board is display-only (no interaction). The analysis is driven by
- * a background WorkManager worker ([GameAnalyzerWorker]) and observed
- * via WorkInfo.
- *
- * Per AGENTS.md: The board position after each move is stored as a FEN string
- * in [AnalyzedMove.fenAfter]. The board state is reconstructed using
- * [ChessBoardState.fromFEN] on recomposition — the ViewModel must NOT hold
- * ChessBoardState objects.
+ * - An explanation panel and AI Coach chat section
  */
 @Composable
 fun AnalysisDashboardScreen(
@@ -69,9 +64,12 @@ fun AnalysisDashboardScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val coachChatState by viewModel.coachChatState.collectAsState()
+    val selectedSquare by viewModel.selectedSquare.collectAsState()
     val moves = uiState.analyzedMoves
     val selectedIdx = uiState.selectedMoveIndex
     val selectedMove = moves.getOrNull(selectedIdx)
+
+    var showPgnDialog by remember { mutableStateOf(false) }
 
     // Reconstruct board state from the selected move's FEN
     val boardState = remember(selectedMove?.fenAfter) {
@@ -94,12 +92,76 @@ fun AnalysisDashboardScreen(
         uiState.isCancelled ||
         (moves.isNotEmpty() && !uiState.isLoading)
 
+    if (showPgnDialog) {
+        var pgnInput by remember { mutableStateOf("") }
+        AlertDialog(
+            onDismissRequest = { showPgnDialog = false },
+            title = { Text("Paste PGN Game") },
+            text = {
+                OutlinedTextField(
+                    value = pgnInput,
+                    onValueChange = { pgnInput = it },
+                    label = { Text("Paste PGN string") },
+                    modifier = Modifier.fillMaxWidth()
+                )
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        if (pgnInput.isNotBlank()) {
+                            viewModel.importPgn(pgnInput)
+                        }
+                        showPgnDialog = false
+                    }
+                ) {
+                    Text("Analyze")
+                }
+            },
+            dismissButton = {
+                OutlinedButton(onClick = { showPgnDialog = false }) {
+                    Text("Cancel")
+                }
+            }
+        )
+    }
+
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(Color(0xFF0F141E))
             .padding(8.dp)
     ) {
+        // ── Top Header & Actions ──────────────────────────────────────
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "Analysis Dashboard",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
+
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                OutlinedButton(
+                    onClick = { showPgnDialog = true },
+                    modifier = Modifier.height(36.dp)
+                ) {
+                    Text("Paste PGN", fontSize = 12.sp)
+                }
+                Button(
+                    onClick = { viewModel.retryAnalysis() },
+                    modifier = Modifier.height(36.dp)
+                ) {
+                    Text("Sample Game", fontSize = 12.sp)
+                }
+            }
+        }
+
         // ── Progress bar (only when analysis is running) ──────────────
         if (uiState.isLoading) {
             LinearProgressIndicatorWithColor(
@@ -127,14 +189,65 @@ fun AnalysisDashboardScreen(
             )
             Chessboard(
                 board = boardState,
-                selectedSquare = null,
-                onSquareSelected = {},
-                onMoveAttempted = { _, _, _ -> },
+                selectedSquare = selectedSquare,
+                onSquareSelected = { square -> viewModel.onSquareSelected(square) },
+                onMoveAttempted = { from, to, promo -> viewModel.onMoveAttempted(from, to, promo) },
                 orientation = BoardOrientation.WHITE_AT_BOTTOM,
                 modifier = Modifier
                     .weight(1f)
                     .aspectRatio(1f)
             )
+        }
+
+        // ── Move Navigation Controls ─────────────────────────────────
+        if (moves.isNotEmpty()) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                OutlinedButton(
+                    onClick = { viewModel.firstMove() },
+                    enabled = selectedIdx > 0,
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text("|<", fontWeight = FontWeight.Bold, fontSize = 11.sp)
+                }
+                Spacer(Modifier.width(4.dp))
+                OutlinedButton(
+                    onClick = { viewModel.prevMove() },
+                    enabled = selectedIdx > 0,
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text("<", fontWeight = FontWeight.Bold, fontSize = 11.sp)
+                }
+                Spacer(Modifier.width(4.dp))
+                Text(
+                    text = "${selectedIdx + 1} / ${moves.size}",
+                    color = Color.White,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(horizontal = 4.dp)
+                )
+                Spacer(Modifier.width(4.dp))
+                OutlinedButton(
+                    onClick = { viewModel.nextMove() },
+                    enabled = selectedIdx < moves.lastIndex,
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(">", fontWeight = FontWeight.Bold, fontSize = 11.sp)
+                }
+                Spacer(Modifier.width(4.dp))
+                OutlinedButton(
+                    onClick = { viewModel.lastMove() },
+                    enabled = selectedIdx < moves.lastIndex,
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(">|", fontWeight = FontWeight.Bold, fontSize = 11.sp)
+                }
+            }
         }
 
         // ── Move list ─────────────────────────────────────────────────
@@ -162,9 +275,9 @@ fun AnalysisDashboardScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "No moves analyzed yet...",
+                    text = "Play moves on the board or tap 'Sample Game' / 'Paste PGN'",
                     color = Color(0xFF888888),
-                    fontSize = 14.sp
+                    fontSize = 13.sp
                 )
             }
         }
@@ -183,6 +296,7 @@ fun AnalysisDashboardScreen(
         ExplanationPanel(
             move = selectedMove,
             coachChatState = coachChatState,
+            isAnalyzing = uiState.isLoading,
             onRequestCoachExplanation = { question ->
                 viewModel.requestCoachExplanation(question)
             }
@@ -200,15 +314,7 @@ fun AnalysisDashboardScreen(
                     onClick = { viewModel.cancelAnalysis() },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text("Cancel")
-                }
-            }
-            if (showRetry) {
-                Button(
-                    onClick = { viewModel.retryAnalysis() },
-                    modifier = Modifier.weight(1f)
-                ) {
-                    Text(if (uiState.error != null) "Retry" else "Re-analyze")
+                    Text("Cancel Analysis")
                 }
             }
         }
@@ -322,6 +428,7 @@ fun MoveListRow(
 fun ExplanationPanel(
     move: AnalyzedMove?,
     coachChatState: com.pro.chessin.ui.screens.viewmodels.CoachChatState,
+    isAnalyzing: Boolean,
     onRequestCoachExplanation: (String) -> Unit,
 ) {
     Card(
@@ -333,20 +440,20 @@ fun ExplanationPanel(
             disabledContainerColor = Color(0xFF191E2B)
         )
     ) {
-        val mv = move
-        if (mv != null) {
-            val moveLabel = remember(mv) {
-                val moveNumber = mv.moveIndex / 2 + 1
-                val isWhiteMove = mv.moveIndex % 2 == 0
-                val suffix = if (isWhiteMove) ". " else "... "
-                "$moveNumber$suffix${mv.san}"
-            }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            val mv = move
+            if (mv != null) {
+                val moveLabel = remember(mv) {
+                    val moveNumber = mv.moveIndex / 2 + 1
+                    val isWhiteMove = mv.moveIndex % 2 == 0
+                    val suffix = if (isWhiteMove) ". " else "... "
+                    "$moveNumber$suffix${mv.san}"
+                }
 
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
-            ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
@@ -396,9 +503,42 @@ fun ExplanationPanel(
                         modifier = Modifier.padding(top = 4.dp)
                     )
                 }
+            } else {
+                Text(
+                    text = "Current Position Analysis",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = "Play moves on the board or tap 'Ask AI Coach' for positional guidance.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Color(0xFFB0B0B0),
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+            }
 
-                // AI Coach Chat Section
-                Spacer(Modifier.height(12.dp))
+            // AI Coach Chat Section (Always Available)
+            Spacer(Modifier.height(12.dp))
+            if (isAnalyzing) {
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.height(20.dp).width(20.dp),
+                        color = Color(0xFF4A90D9),
+                        strokeWidth = 2.dp
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = "Engine analyzing position...",
+                        color = Color(0xFFB0B0B0),
+                        fontSize = 13.sp
+                    )
+                }
+            } else {
                 when (coachChatState) {
                     is com.pro.chessin.ui.screens.viewmodels.CoachChatState.Idle -> {
                         Button(
@@ -435,6 +575,13 @@ fun ExplanationPanel(
                                 fontSize = 13.sp,
                                 modifier = Modifier.padding(top = 4.dp)
                             )
+                            Spacer(Modifier.height(8.dp))
+                            OutlinedButton(
+                                onClick = { onRequestCoachExplanation("Explain this move and position in more detail") },
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text("Ask AI Coach Again")
+                            }
                         }
                     }
                     is com.pro.chessin.ui.screens.viewmodels.CoachChatState.Error -> {
@@ -453,19 +600,6 @@ fun ExplanationPanel(
                         }
                     }
                 }
-            }
-        } else {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = "Select a move for analysis details",
-                    color = Color(0xFF888888),
-                    fontSize = 14.sp
-                )
             }
         }
     }

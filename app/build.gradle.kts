@@ -128,6 +128,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx:23.0.0")
     implementation("androidx.credentials:credentials:1.3.0")
     implementation("androidx.credentials:credentials-play-services-auth:1.3.0")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+    implementation("com.android.billingclient:billing-ktx:7.1.1")
     ksp(libs.androidx.room.compiler)
     ksp(libs.hilt.compiler)
     ksp(libs.hilt.work.compiler)

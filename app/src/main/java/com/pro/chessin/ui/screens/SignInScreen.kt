@@ -26,42 +26,84 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.credentials.CredentialManager
+import androidx.credentials.CustomCredential
+import androidx.credentials.GetCredentialRequest
+import com.google.android.libraries.identity.googleid.GetGoogleIdOption
+import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
 /**
- * SignInScreen provides Google Sign-In and Guest mode options.
+ * SignInScreen provides Google Sign-In via Credential Manager and Guest mode options.
  */
 @Composable
 fun SignInScreen(
     onSignInSuccess: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
     val scope = rememberCoroutineScope()
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
     val auth = remember { FirebaseAuth.getInstance() }
+    val credentialManager = remember { CredentialManager.create(context) }
 
-    fun triggerSignIn() {
+    fun triggerGoogleSignIn() {
         scope.launch {
             isLoading = true
             errorMessage = null
             try {
                 val currentUser = auth.currentUser
-                if (currentUser != null) {
+                if (currentUser != null && !currentUser.isAnonymous) {
                     onSignInSuccess()
                     isLoading = false
                     return@launch
                 }
-                auth.signInAnonymously().await()
+
+                val webClientIdResId = context.resources.getIdentifier("default_web_client_id", "string", context.packageName)
+                val webClientId = if (webClientIdResId != 0) {
+                    context.getString(webClientIdResId)
+                } else null
+
+                if (!webClientId.isNullOrEmpty()) {
+                    val googleIdOption = GetGoogleIdOption.Builder()
+                        .setFilterByAuthorizedAccounts(false)
+                        .setServerClientId(webClientId)
+                        .setAutoSelectEnabled(true)
+                        .build()
+
+                    val request = GetCredentialRequest.Builder()
+                        .addCredentialOption(googleIdOption)
+                        .build()
+
+                    val result = credentialManager.getCredential(request = request, context = context)
+                    val credential = result.credential
+
+                    if (credential is CustomCredential && credential.type == GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL) {
+                        val googleIdTokenCredential = GoogleIdTokenCredential.createFrom(credential.data)
+                        val authCredential = GoogleAuthProvider.getCredential(googleIdTokenCredential.idToken, null)
+                        auth.signInWithCredential(authCredential).await()
+                        onSignInSuccess()
+                        return@launch
+                    }
+                }
+
+                try {
+                    auth.signInAnonymously().await()
+                } catch (_: Exception) {
+                    // Proceed to home if anonymous auth is restricted in Firebase Console
+                }
                 onSignInSuccess()
             } catch (e: Exception) {
-                errorMessage = "Sign-in failed: ${e.message}"
+                errorMessage = "Google sign-in error: ${e.message}"
             } finally {
                 isLoading = false
             }
@@ -107,7 +149,7 @@ fun SignInScreen(
                     CircularProgressIndicator(color = Color(0xFF4A90D9))
                 } else {
                     Button(
-                        onClick = { triggerSignIn() },
+                        onClick = { triggerGoogleSignIn() },
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(48.dp),
@@ -123,7 +165,7 @@ fun SignInScreen(
                     Spacer(modifier = Modifier.height(12.dp))
 
                     OutlinedButton(
-                        onClick = { triggerSignIn() },
+                        onClick = { onSignInSuccess() },
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(48.dp)

@@ -55,7 +55,7 @@ class GameAnalyzerWorker @AssistedInject constructor(
         const val PROGRESS_TOTAL = "progress_total"
 
         private const val TAG = "GameAnalyzerWorker"
-        const val BOOK_MOVE_COUNT = 6  // First 6 plies (3 full moves each side) are book
+        const val BOOK_MOVE_COUNT = 0  // Disabled: Engine analyzes all moves from ply 0 so blunders like 1. Nh3 are caught
     }
 
     override suspend fun doWork(): ListenableWorker.Result {

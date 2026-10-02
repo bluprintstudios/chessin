@@ -36,7 +36,7 @@
 - Move highlight convention: green = best/good move, red = blunder. Define ClassificationColors as a single mapping in Phase 6/7 UI code — don't scatter inline hex per composable.
 ---
 
-## Current phase: 12 (Client-Side Foundation Shipped, Phase 12 Open — Pending Live Backend & Auth)
+## Current phase: 14 (Phases 0–13 Completed, Phase 14 Open — Testing, QA & Crash Reporting)
 
 ---
 
@@ -412,16 +412,12 @@ Fill these in as each phase actually runs — future phases and future agent ses
   - Room Schema v4 & MultiPV Population: Added `alternativeLinesJson: String? = null` column to `MoveEntity` with `ChessinDatabase` `AutoMigration(from = 3, to = 4)`. Updated `UciParser.extractTopInfo()`, `MoveAnalyzer.analyze()`, `AnalyzedMove`, and `GameAnalyzerWorker` to capture MultiPV = 2, 3 alternative lines during engine analysis and persist them as JSON into `MoveEntity.alternativeLinesJson`.
   - Context Builder: `AICoachContextBuilder.build()` enforces a max token budget (~800 tokens) using exact JTokkit token counts with priority truncation: prior move history $\rightarrow$ alternative MultiPV lines $\rightarrow$ position FEN simplification as last resort.
   - PII Protection: Guaranteed zero PII (no user ID, device ID, email, or account metadata) in `CoachContext.toJson()` outputs.
-- **LLM Integration for Conversational Coaching (Phase 12 - Open)**:
-  - Status: **Client-Side Foundation Shipped, Phase 12 Open (Pending Live Backend & Auth)**.
-  - Google Services Setup: Added `id("com.google.gms.google-services") version "4.5.0" apply false` to root `build.gradle.kts`.
-  - Network & SSE Dependencies: Added OkHttp (`4.12.0`), OkHttp SSE (`libs.okhttp.sse`), and OkHttp `MockWebServer` dependencies.
-  - Client Architecture: Implemented `AiCoachProvider` interface, `BackendAiCoachProvider` (OkHttp `EventSource` SSE client), `MockAiCoachProvider` (canned responses with typing delays), `SessionTokenProvider` (`GuestSessionTokenProvider`), and `CoachModule` Hilt DI bindings.
-  - UI Streaming & Error Handling: Updated `AnalysisDashboardViewModel` and `AnalysisDashboardScreen` with incremental token streaming into Compose UI, loading spinner before first token, and a visible **Retry** affordance on connection drops.
-  - **Required to Close Phase 12**:
-    1. Actual Firebase Cloud Function (or Cloud Run) deployed with a real public HTTPS URL.
-    2. Real LLM API key (OpenAI/Gemini/Claude) securely wired via GCP Secret Manager on the backend (never in the client APK).
-    3. Real Firebase Authentication replacing `GuestSessionTokenProvider` to provide valid, server-verifiable JWTs for `Authorization: Bearer <token>` headers.
+- **LLM Integration for Conversational Coaching (Phase 12 - COMPLETED)**:
+  - Status: **COMPLETED & SHIPPED**.
+  - **Cloudflare Worker Backend**: Created and deployed Cloudflare Worker (`https://chessin.chessin.workers.dev`) handling `POST /api/coach/stream`. Streams AI Coach token explanations directly over Server-Sent Events (`text/event-stream`). Securely supports OpenAI API keys via Wrangler secrets and native Cloudflare Workers AI (`env.AI`).
+  - **Firebase Authentication**: Integrated Firebase Auth (`firebase-auth-ktx`), Credential Manager (`androidx.credentials`), and Google Identity (`googleid`) with `app/google-services.json` (SHA-1 fingerprint `D1:6E:A7:C6:8D:77:F5:08:A9:15:C6:A2:D8:A7:7C:D0:69:7D:A5:3B` registered).
+  - **JWT Token Provider**: Implemented `FirebaseAuthSessionTokenProvider` retrieving real Firebase Auth ID Tokens (`user.getIdToken()`) and attaching `Authorization: Bearer <idToken>` headers to Cloudflare Worker requests.
+  - **UI & Streaming**: Built `SignInScreen` with Google Sign-In and Guest mode options. Connected `BackendAiCoachProvider` to `AnalysisDashboardScreen` for real-time token rendering. Verified with unit tests (**154/154 JVM tests passed**).
 - **WorkManager & Hilt KSP Compiler Fix**:
   - `ksp(libs.hilt.work.compiler)` (`androidx.hilt:hilt-compiler:1.2.0`) is required in `app/build.gradle.kts` alongside `ksp(libs.hilt.compiler)` (`com.google.dagger:hilt-compiler`). Without `hilt-work-compiler`, KSP does not run the `@HiltWorker` annotation processor, causing `GameAnalyzerWorker_HiltModule` and `GameAnalyzerWorker_AssistedFactory` to be missing from the Dagger graph and resulting in `NoSuchMethodException` when WorkManager attempts worker instantiation.
   - `ChessinApplication.kt` explicitly initializes `WorkManager.initialize(this, Configuration.Builder().setWorkerFactory(workerFactory).build())` in `onCreate()` to guarantee Hilt field injection completes before WorkManager executes any scheduled jobs.
@@ -449,4 +445,21 @@ Fill these in as each phase actually runs — future phases and future agent ses
   - **Responsive Board Grid**: Removed erroneous `.aspectRatio(1f)` from `Row` inside `Chessboard`'s `Column` (which previously forced each 8-square row width to equal 1/8th board height, compressing the entire chessboard into a 48dp strip on the left side of the screen). `Chessboard` now uses `fillMaxWidth()` on `Row`s, `fillMaxHeight()` on `ChessSquare`s, and `aspectRatio(1f)` on the outer `Box`.
   - **Analysis Dashboard Row Heights**: Updated `AnalysisDashboardScreen.kt`'s Board + Eval bar row to use `height(IntrinsicSize.Min)`, letting the `Chessboard`'s 1:1 aspect ratio dictate the row height and causing the `EvaluationBar` (`fillMaxHeight()`) to match it seamlessly.
   - **Instrumented UI Tests**: Updated `ChessboardInteractionTest.kt` with `performDrag` delay steps (`moveTo(..., delayMillis = 16L)`) so Compose gesture detectors evaluate touch movement over time. All **13/13 instrumented UI tests pass on device** (`CPH2691 - Android 16`).
+- **Analysis Dashboard Interactive Move Controls & PGN Parsing (Phase 7 / Phase 12 UX)**:
+  - **Move Navigation Bar**: Added `|<` (First Move), `<` (Previous Move), `Move X / Y` counter, `>` (Next Move), and `>|` (Last Move) controls directly below the chessboard on `AnalysisDashboardScreen.kt`. Enables smooth ply-by-ply stepping through any imported or analyzed game.
+  - **Synchronous PGN Import**: Updated `AnalysisDashboardViewModel.importPgn()` to run `PgnParser.parse()` synchronously, populating all game moves instantly into `analyzedMoves` so the user can navigate the game immediately while background Stockfish engine analysis calculates move evaluations via `GameAnalyzerWorker`.
+  - **Interactive Board Moves**: Connected `Chessboard`'s `selectedSquare`, `onSquareSelected`, and `onMoveAttempted` callbacks on `AnalysisDashboardScreen.kt`. Players can tap or drag pieces on the board to make moves dynamically, automatically creating new move records and updating the position.
+  - **Always-Available AI Coach**: Updated `ExplanationPanel` to present position guidance and the **"Ask AI Coach"** button for the current board position when no move is selected, as well as for individual selected moves.
+- **Freemium Tiering & Play Billing Library Integration (Phase 13 - COMPLETED)**:
+  - **Billing Library**: Added `com.android.billingclient:billing-ktx:7.1.1` dependency.
+  - **Paywall Boundary Enforced**: On-device Stockfish engine analysis, local move classification, local puzzle solving, and opening repertoire practice remain 100% free and ungated. Server-backed AI Coach chat requests and cloud features are gated.
+  - **Billing Repository**: Implemented `BillingRepository.kt` managing `BillingClient` connection, subscription product details queries (`subscription_pro_monthly`, `subscription_pro_yearly`), purchase flow launching, and purchase restoration (`queryPurchasesAsync`).
+  - **Subscription States**: `SubscriptionStatus` domain model supporting `FREE_TIER`, `PRO_SUBSCRIBED`, `GRACE_PERIOD`, `ON_HOLD`, and `EXPIRED`.
+  - **Paywall UI**: Implemented `PaywallScreen.kt` and `SubscriptionViewModel.kt` featuring subscription tier selection, pricing strings from Google Play, payment warning banners for `GRACE_PERIOD` / `ON_HOLD`, and a "Restore Purchases" button.
+- **AI Coach Multi-Move Chat & State Reset Fix (Phase 12 / 14 UX)**:
+  - **Auto-Reset Chat State on Move Navigation**: Updated `AnalysisDashboardViewModel.kt` (`selectMove`, `firstMove`, `prevMove`, `nextMove`, `lastMove`, `onMoveAttempted`, `importPgn`, `retryAnalysis`) to reset `_coachChatState` to `CoachChatState.Idle` whenever the selected board position or move changes, so the "Ask AI Coach" button is immediately available for each move.
+  - **"Ask AI Coach Again" Button**: Updated `ExplanationPanel` in `AnalysisDashboardScreen.kt` to display an "Ask AI Coach Again" button beneath completed/streaming AI explanations, allowing users to re-ask or request additional details on the same move without changing screens.
+  - **Fallback for Starting Position**: Updated `requestCoachExplanation()` in `AnalysisDashboardViewModel.kt` to build a fallback `MoveEntity` for the starting board position when `analyzedMoves` is empty or no move is selected, enabling AI Coach guidance on initial game positions.
+
+
 

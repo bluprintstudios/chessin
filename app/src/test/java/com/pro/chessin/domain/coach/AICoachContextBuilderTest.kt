@@ -71,6 +71,7 @@ class AICoachContextBuilderTest {
             move = targetMove,
             game = dummyGame,
             priorPly = priorPly,
+            deltaCp = 10,
             maxTokenBudget = 800
         )
 
@@ -122,6 +123,7 @@ class AICoachContextBuilderTest {
             move = move,
             game = dummyGame,
             priorPly = priorPly,
+            deltaCp = 0,
             maxTokenBudget = 150
         )
 
@@ -149,6 +151,7 @@ class AICoachContextBuilderTest {
             move = targetMove,
             game = dummyGame,
             priorPly = emptyList(),
+            deltaCp = 0,
             maxTokenBudget = 800
         )
 
@@ -177,7 +180,8 @@ class AICoachContextBuilderTest {
         val context = AICoachContextBuilder.build(
             move = move,
             game = dummyGame,
-            priorPly = emptyList()
+            priorPly = emptyList(),
+            deltaCp = 0
         )
 
         val json = context.toJson()

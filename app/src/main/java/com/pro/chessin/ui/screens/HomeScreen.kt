@@ -20,6 +20,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.google.firebase.auth.FirebaseAuth
 import com.pro.chessin.ui.screens.viewmodels.HomeViewModel
 
 /**
@@ -42,11 +43,20 @@ fun HomeScreen(
 
     val diMessage = viewModel.getDiTestMessage()
 
+    val currentUser = remember { FirebaseAuth.getInstance().currentUser }
+    val authLabel = if (currentUser != null && !currentUser.isAnonymous) {
+        "Account (${currentUser.email ?: "Signed In"})"
+    } else {
+        "Sign In / Account"
+    }
+
     val items = listOf(
         "Analysis Board" to "analysis",
         "Analysis Dashboard" to "analysis_dashboard",
         "Repertoire" to "repertoire",
         "Puzzles" to "puzzles",
+        authLabel to "sign_in",
+        "Chessin PRO ⭐" to "paywall",
         "Settings" to "settings",
     )
 
@@ -55,7 +65,7 @@ fun HomeScreen(
             .fillMaxSize()
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         Text(
             text = "Chessin",

@@ -14,9 +14,11 @@ import androidx.navigation.compose.rememberNavController
 import com.pro.chessin.ui.screens.AnalysisDashboardScreen
 import com.pro.chessin.ui.screens.AnalysisScreen
 import com.pro.chessin.ui.screens.HomeScreen
+import com.pro.chessin.ui.screens.PaywallScreen
 import com.pro.chessin.ui.screens.PuzzlesScreen
 import com.pro.chessin.ui.screens.RepertoireScreen
 import com.pro.chessin.ui.screens.SettingsScreen
+import com.pro.chessin.ui.screens.SignInScreen
 import com.pro.chessin.ui.theme.ChessinTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,7 +40,21 @@ class MainActivity : ComponentActivity() {
                         composable("analysis_dashboard") { AnalysisDashboardScreen() }
                         composable("repertoire") { RepertoireScreen() }
                         composable("puzzles") { PuzzlesScreen() }
-                        composable("settings") { SettingsScreen() }
+                        composable("settings") { SettingsScreen(navController = navController) }
+                        composable("sign_in") {
+                            SignInScreen(
+                                onSignInSuccess = {
+                                    navController.navigate("home") {
+                                        popUpTo("sign_in") { inclusive = true }
+                                    }
+                                }
+                            )
+                        }
+                        composable("paywall") {
+                            PaywallScreen(
+                                onDismiss = { navController.popBackStack() }
+                            )
+                        }
                     }
                 }
             }

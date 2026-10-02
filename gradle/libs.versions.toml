@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.2"
+agp = "8.13.2"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -24,6 +24,7 @@ okhttp = "4.12.0"
 firebaseAuth = "23.0.0"
 googleServices = "4.4.2"
 credentials = "1.3.0"
+billingKtx = "7.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -62,6 +63,7 @@ mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", versio
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuth" }
 androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "credentials" }
 androidx-credentials-play-services-auth = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "credentials" }
+play-billing-ktx = { group = "com.android.billingclient", name = "billing-ktx", version.ref = "billingKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
