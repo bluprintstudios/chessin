@@ -1,0 +1,7 @@
+# Copy this file to .dev.vars. It is ignored by Git.
+# Use only with `npx wrangler dev --local`; never deploy these development-only settings.
+OPENROUTER_API_KEY=
+AI_SERVICE_ENABLED=true
+MODEL_NAME=openrouter/free
+ALLOW_FREE_ROUTER=true
+REQUIRE_VERIFIED_ENTITLEMENT=false

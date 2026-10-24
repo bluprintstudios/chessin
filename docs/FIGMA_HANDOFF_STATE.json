@@ -1,0 +1,29 @@
+{
+  "fileKey": "wuTuHMIPgGdOvvr7r6AMoq",
+  "scope": "Chessin' Android mobile design handoff",
+  "visualDirection": "Game Review navy, blue-grey, and lime engine-accent system",
+  "existingAssets": ["Game_Review", "Square_Main", "Chess piece components", "move-quality highlights"],
+  "plannedScreens": [
+    "Onboarding and local-data choice",
+    "Game library empty and populated",
+    "Import PGN and import error",
+    "Review analyzed and analysis-progress",
+    "Game summary",
+    "Coach preview and grounded answer",
+    "Membership one-time purchase",
+    "Settings, privacy, licenses, and delete-data confirmation"
+  ],
+  "figmaArtifacts": {
+    "foundation": "44:472",
+    "coreFlowSection": "45:470",
+    "screenCount": 16,
+    "screenRange": "00 through 15"
+  },
+  "verification": [
+    "Inspected the existing editable review frame and chess components before adding screens.",
+    "Created 14 local color variables and reusable button, field, navigation, and status-chip components.",
+    "Checked a representative Coach answer frame through Figma design context after mobile copy wrapping was applied.",
+    "Reconciled the foundations and all 16 handoff frames with the existing Game_Review palette: #05102C background, #0D1937 surfaces, #1A2747 outlines, #F4F5F8 primary text, #AAB5CF secondary text, and #A8C66C engine accent."
+  ],
+  "knownLimit": "The connected Figma Starter plan currently permits one local variable mode, so dark-theme values remain specified by the Android implementation rather than a second Figma variable mode."
+}
