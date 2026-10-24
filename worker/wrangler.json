@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chess-review-ai-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-11",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "AI_SERVICE_ENABLED": "false",
+    "MODEL_NAME": "openai/gpt-4.1-mini",
+    "REQUIRE_VERIFIED_ENTITLEMENT": "true"
+  }
+}

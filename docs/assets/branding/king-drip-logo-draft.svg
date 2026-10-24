@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Dripping king logo draft</title>
+  <desc id="desc">An original outlined chess king whose base flows into three rounded drips.</desc>
+
+  <!-- The mark is intentionally one color so it remains legible at app-icon sizes. -->
+  <g stroke="#242A33" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Crown cross -->
+    <path d="M128 23V58M116 36H140" />
+
+    <!-- King silhouette: the base continues into architectural, rounded drips. -->
+    <path d="M113 58C116 69 112 79 96 92L112 106L103 157C100 171 92 181 80 190C77 193 76 197 76 201H100C106 201 110 205 110 211V221C110 228 115 233 121 233C128 233 133 228 133 221V210C133 205 137 201 142 201H148C154 201 158 205 158 211V217C158 224 163 229 169 229C176 229 181 224 181 217V207C181 203 184 201 188 201H180C180 197 179 193 176 190C164 181 156 171 153 157L144 106L160 92C144 79 140 69 143 58Z" />
+
+    <!-- Small pedestal detail gives the mark a recognizable king profile. -->
+    <path d="M105 158H151" />
+  </g>
+</svg>

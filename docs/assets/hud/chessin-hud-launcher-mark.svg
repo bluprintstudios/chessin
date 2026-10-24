@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Chessin HUD launcher mark</title>
+  <desc id="desc">An original king-in-reticle mark for the Chessin HUD visual system.</desc>
+  <g stroke="#91D7EF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 26v34M111 43h34"/>
+    <circle cx="128" cy="133" r="82"/>
+    <path d="M128 52v23M128 191v23M47 133h23M186 133h23" opacity=".72"/>
+    <path d="M102 204h52M109 204l7-49-19-21 22-20c-4-13-1-27 9-37 10 10 13 24 9 37l22 20-19 21 7 49"/>
+    <path d="M116 155h24M112 181h32" opacity=".72"/>
+  </g>
+</svg>

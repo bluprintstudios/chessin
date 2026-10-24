@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!--
+      The app is local-only by default. Do not copy imported games, analysis,
+      or preferences to cloud backup or a replacement device on Android 11 and
+      lower. android:allowBackup="false" is the primary opt-out; these rules
+      retain that behavior on backup transports that read this resource.
+    -->
+    <exclude domain="root" path="." />
+    <exclude domain="file" path="." />
+    <exclude domain="database" path="." />
+    <exclude domain="sharedpref" path="." />
+    <exclude domain="external" path="." />
+    <exclude domain="device_root" path="." />
+    <exclude domain="device_file" path="." />
+    <exclude domain="device_database" path="." />
+    <exclude domain="device_sharedpref" path="." />
+</full-backup-content>

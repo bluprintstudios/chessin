@@ -1,0 +1,118 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d722ef7eb42eeb9bd3d7af46ef403cff",
+    "entities": [
+      {
+        "tableName": "games",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `source` TEXT NOT NULL, `sourceGameId` TEXT, `username` TEXT, `importedAtEpochMillis` INTEGER NOT NULL, `playedAtEpochMillis` INTEGER, `whitePlayer` TEXT, `blackPlayer` TEXT, `whiteRating` INTEGER, `blackRating` INTEGER, `timeControl` TEXT, `result` TEXT, `pgn` TEXT NOT NULL, `variant` TEXT NOT NULL, `parseStatus` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceGameId",
+            "columnName": "sourceGameId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "username",
+            "columnName": "username",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "importedAtEpochMillis",
+            "columnName": "importedAtEpochMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "playedAtEpochMillis",
+            "columnName": "playedAtEpochMillis",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "whitePlayer",
+            "columnName": "whitePlayer",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "blackPlayer",
+            "columnName": "blackPlayer",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "whiteRating",
+            "columnName": "whiteRating",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "blackRating",
+            "columnName": "blackRating",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "timeControl",
+            "columnName": "timeControl",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "result",
+            "columnName": "result",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "pgn",
+            "columnName": "pgn",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "variant",
+            "columnName": "variant",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parseStatus",
+            "columnName": "parseStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_games_source_sourceGameId",
+            "unique": true,
+            "columnNames": [
+              "source",
+              "sourceGameId"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_games_source_sourceGameId` ON `${TABLE_NAME}` (`source`, `sourceGameId`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd722ef7eb42eeb9bd3d7af46ef403cff')"
+    ]
+  }
+}
