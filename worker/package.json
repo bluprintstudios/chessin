@@ -1,0 +1,13 @@
+{
+  "name": "chess-review-ai-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cloudflare Worker AI Gateway for Chess Review App",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.151.3"
+  }
+}

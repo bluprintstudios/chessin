@@ -23,7 +23,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Chessin"
+rootProject.name = "chess_review"
 include(":app")
-include(":nnue_assets")
  

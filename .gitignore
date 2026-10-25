@@ -1,6 +1,9 @@
 *.iml
+.idea/
 .gradle
 /local.properties
+/worker/.dev.vars
+/worker/.wrangler/
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -9,17 +12,15 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+**/build/
 /captures
+/output/
+/*.zip
+**/node_modules/
 .externalNativeBuild
 .cxx
 local.properties
-
-# Room schema exports should be tracked for AutoMigration support
-!app/schemas
-
-# wrangler files
-.wrangler
-.dev.vars*
-!.dev.vars.example
-.env*
-!.env.example
+*.jks
+*.keystore
+*.pem
+*.key

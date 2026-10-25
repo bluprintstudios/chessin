@@ -1,0 +1,9 @@
+task checkDeps {
+    doLast {
+        configurations.debugAndroidTestRuntimeClasspath.resolvedConfiguration.resolvedArtifacts.each {
+            if (it.name.contains("kotlinx-coroutines-test")) {
+                println("FOUND: " + it.name + " " + it.moduleVersion.id.version)
+            }
+        }
+    }
+}

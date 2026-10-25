@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Chessin HUD navigation icon sheet</title>
+  <desc id="desc">Original vector icons for Review, Coach, Library, and Settings.</desc>
+  <g stroke="#91D7EF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Review: board position under an analysis reticle. -->
+    <g transform="translate(16 16)">
+      <circle cx="64" cy="64" r="43"/>
+      <path d="M64 10v20M64 98v20M10 64h20M98 64h20M41 64h46M64 41v46"/>
+      <path d="M55 87h18l-3-17c6-5 5-15-6-20v-7h-2v7c-11 5-12 15-6 20z"/>
+    </g>
+    <!-- Coach: a tactical signal transmitted from a king profile. -->
+    <g transform="translate(176 16)">
+      <path d="M51 108h28M57 108l4-26-12-13 14-13c-2-9 0-18 10-25 10 7 12 16 10 25l14 13-12 13 4 26"/>
+      <path d="M69 25V8M60 16h18M98 42c12 8 20 19 23 32M105 25c18 12 29 30 32 50"/>
+      <circle cx="125" cy="86" r="5" fill="#91D7EF"/>
+    </g>
+    <!-- Library: three game-record panels with a move list. -->
+    <g transform="translate(336 16)">
+      <path d="M31 32h58l14 14v68H45L31 100z"/>
+      <path d="M89 32v16h14M51 61h34M51 78h34M51 95h18"/>
+      <path d="M40 24h58M35 17h58" opacity=".55"/>
+      <path d="M47 60v34M64 60v34M81 60v34" opacity=".42"/>
+    </g>
+    <!-- Settings: a clean dial instead of a generic stock gear. -->
+    <g transform="translate(496 16)">
+      <circle cx="64" cy="64" r="36"/>
+      <circle cx="64" cy="64" r="10"/>
+      <path d="M64 16v14M64 98v14M16 64h14M98 64h14M30 30l10 10M88 88l10 10M30 98l10-10M88 40l10-10"/>
+      <path d="M64 64l20-17"/>
+    </g>
+  </g>
+</svg>
